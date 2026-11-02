@@ -9,9 +9,15 @@
 
   if (!gate || !form || !input || !error) return;
 
+  const unlock = () => {
+    gate.style.display = "none";
+    document.documentElement.style.overflow = "";
+    error.textContent = "";
+  };
+
   try {
     if (sessionStorage.getItem(KEY) === "yes") {
-      gate.hidden = true;
+      unlock();
       return;
     }
   } catch (_) {}
@@ -21,9 +27,7 @@
     event.preventDefault();
     if (input.value === PASSWORD) {
       try { sessionStorage.setItem(KEY, "yes"); } catch (_) {}
-      gate.hidden = true;
-      document.documentElement.style.overflow = "";
-      error.textContent = "";
+      unlock();
     } else {
       error.textContent = "Contraseña incorrecta";
       input.value = "";
