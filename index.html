@@ -91,6 +91,17 @@
 <script src="js/noframe.js"></script>
 </head>
 <body>
+<div id="site-password-gate" style="position:fixed;inset:0;z-index:2147483647;background:#fff;color:#111;display:grid;place-items:center;padding:24px;font-family:Arial,sans-serif">
+  <form id="site-password-form" style="width:min(360px,100%);text-align:center">
+    <h1 style="font-size:24px;margin:0 0 22px">Enter password</h1>
+    <label for="site-password" style="display:block;text-align:left;margin-bottom:8px">Password</label>
+    <input id="site-password" type="password" autocomplete="current-password" required
+      style="box-sizing:border-box;width:100%;padding:13px;border:1px solid #bbb;border-radius:6px;font-size:16px">
+    <button type="submit" style="width:100%;margin-top:14px;padding:13px;border:0;border-radius:6px;background:#222;color:#fff;font-size:16px;cursor:pointer">Continue</button>
+    <p id="site-password-error" role="alert" style="min-height:20px;color:#c00;font-size:14px"></p>
+  </form>
+</div>
+<script src="js/password-gate.js"></script>
 
 <canvas id="game"></canvas>
 <div id="rotate" class="hidden"><div class="box center"><div id="rotate-ico"></div><h2>Gira el móvil</h2><p class="sub">PokéSurvivor se juega en horizontal.</p></div></div>
